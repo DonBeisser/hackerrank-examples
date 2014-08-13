@@ -12,7 +12,8 @@ function checkempty($char){
 function makearray($_count, $_source){
     $count2 = 1
         for (i=1; i<=$count; i++){
-        
+        checkempty($_source);
+        $position=array[$source] // some changes needed
     }
 } 
 // open Document
