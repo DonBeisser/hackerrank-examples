@@ -1,0 +1,38 @@
+<?php
+// First growing: own height
+function firststep($x){
+    global $sum;
+    $sum = $x*2;
+    return $sum;
+}
+// Second growing: one meter
+function secondstep($y){
+    global $sum;
+    $sum = $y+1;
+    return $sum;
+}
+// Open and read Input document "stdin"
+$handle = fopen("php://stdin", "r");
+
+// number of Tests
+$_tests = fgets($handle);
+
+// Loop through the x number of tests
+for ($j = 1; $j <= $_tests; $j++){
+	// get number of cycles per test
+	$_cycles = fgets($handle);
+    $sum = 1;
+	// loop the cycles to get the result
+	for ($i = 1 ; $i <= $_cycles; $i++){
+		if($i % 2 == 0){
+			secondstep($sum);
+		}
+		else{
+			firststep($sum);
+		}
+        
+	}
+print $sum ."\n";
+}
+fclose($handle);
+?>
