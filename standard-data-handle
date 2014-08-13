@@ -1,0 +1,7 @@
+<?php
+
+$handle = fopen("php://stdin","r");
+$read = gets($handle);
+fclose($handle);
+
+?>
