@@ -1,0 +1,21 @@
+<?php   
+//check if there is an character ignore if null 
+function checkempty($char){
+    if ($char == null){
+        fgetc($handle);
+    }    
+    else{
+        return $char;
+    }
+} 
+
+function makearray($_count, $_source){
+    $count2 = 1
+        for (i=1; i<=$count; i++){
+        
+    }
+} 
+// open Document
+$handle = fopen("php://stdin", "r");
+    
+?>
