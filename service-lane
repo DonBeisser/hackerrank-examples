@@ -1,22 +1,24 @@
 <?php   
-//check if there is an character ignore if null 
-function checkempty($char){
-    if ($char == null){
-        fgetc($handle);
-    }    
-    else{
-        return $char;
-    }
-} 
 
-function makearray($_count, $_source){
-    $count2 = 1
-        for (i=1; i<=$count; i++){
-        checkempty($_source);
-        $position=array[$source] // some changes needed
-    }
-} 
 // open Document
 $handle = fopen("php://stdin", "r");
-    
+
+//take number first line and remove whitespace
+$line = trim(fgets($handle), " ");
+
+// get first character of first line
+$_n = $line[0];
+
+// get secon character of first line
+$_t = $line[1];
+
+// get second line and remove Whitespace
+$line = trim(fgets($handle, " ");
+
+// make Array and fill it with Data from second line
+$position = array();
+for ($c = 0 ; $c <= strlen($line)-1 ; $c++){
+    array_push($position, $line[$c];);
+}
+
 ?>
