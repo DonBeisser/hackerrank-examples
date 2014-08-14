@@ -3,7 +3,7 @@
 // open Document
 $handle = fopen("php://stdin", "r");
 
-//take number first line and remove whitespace
+//take numbers of first line and remove whitespace
 $line = trim(fgets($handle), " ");
 
 // get first character of first line
@@ -15,10 +15,22 @@ $_t = $line[1];
 // get second line and remove Whitespace
 $line = trim(fgets($handle, " ");
 
-// make Array and fill it with Data from second line
-$position = array();
-for ($c = 0 ; $c <= strlen($line)-1 ; $c++){
-    array_push($position, $line[$c];);
+// make Array and fill it with N positions from second line
+$lanepos = array();
+for ($c = 0 ; $c <= $_n - 1 ; $c++){
+    array_push($lanepos, $line[$c];);
+}
+
+//check every single line and their positions if the vehicle can pass
+for ($_c = 0 ; $_c <= $_t - 1; $_c++){
+    $pos = trim(fgets($handle));
+    $startpos = $pos[0];
+    $stoppos = $pos[1];
+    $laneposcheck = array();
+    for($i=$startpos; $i <= $stoppos; $i++){
+        array_push($laneposcheck; $lanepos[$i]); 
+    }
+   print max($laneposcheck);
 }
 
 ?>
