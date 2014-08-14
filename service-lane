@@ -30,7 +30,7 @@ for ($_c = 0 ; $_c <= $_t - 1; $_c++){
     for($i=$startpos; $i <= $stoppos; $i++){
         array_push($laneposcheck; $lanepos[$i]); 
     }
-   print max($laneposcheck);
+   echo max($laneposcheck)."\n";
 }
 
 ?>
