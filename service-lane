@@ -2,35 +2,25 @@
 // open Document
 $handle = fopen("php://stdin", "r");
 //take numbers of first line and remove whitespace
-$lineone = fgets($handle);
-$line = str_replace(" ","",$lineone);
-// get first character of first line
+$line = explode(" ",fgets($handle));
+// get first and second number of first line
 $_n = $line[0];
-// print trim($line); //for testing purposes only
-// get second character of first line
 $_t = $line[1];
-// get second line and remove whitespace
-$testline = str_replace(" ","",fgets($handle));
-// make Array and fill it with N positions from second line
-$lanepos = array();
-for ($c = 0 ; $c <= $_n - 1 ; $c++){
-array_push($lanepos, $testline[$c]);
-}
+// get second line and remove whitespace and make an Array
+$lanepos = explode(" ",fgets($handle));
 $erg = array();
-//check every single line and their positions witch vehicle can pass
+//check every single line and their positions what type of vehicle can pass
 for ($_c = 0 ; $_c <= $_t - 1; $_c++){
-$pos = str_replace(" ","",fgets($handle));
+$pos = explode(" ",fgets($handle));
 $startpos = $pos[0];
 $stoppos = $pos[1];
-$laneposcheck = array();
+$checkpos = array();
 for($i=$startpos; $i <= $stoppos; $i++){
-array_push($laneposcheck, $lanepos[$i]);
+array_push($checkpos, $lanepos[$i]);
 }
-
-array_push($erg, min($laneposcheck));
+array_push($erg, min($checkpos));
 }
 foreach($erg as $value){
     print $value ."\n";
 }
-
 ?>
